@@ -1,7 +1,7 @@
 # iOS-CoreData-CoreDataStack
 iOS-CoreDataStack
 
-This is a summary of learning Core Data. The goal is to help myself and other beginners to understand how the Core Data works and how to use it. All materials are from internet and Apple documentations.
+This is a summary of learning Core Data. The goal is to help myself and other beginners to understand how the Core Data works and how to use it. All materials are collected from internet and Apple documentations.
 
 # What is CoreData?
 Core Data is an object graph management and persistence framework in the OS X and iOS SDKs. It can use SQLite as the data store behind the scenes. Core Data managed object context is not thread-safe.
