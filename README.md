@@ -1,6 +1,7 @@
 # iOS-CoreData-CoreDataStack
 iOS-CoreDataStack
 
+This is a summary of learning Core Data. The goal is to help other beginners and myself to understand how the Core Data works and how to use it.
 
 # What is CoreData?
 Core Data is an object graph management and persistence framework in the OS X and iOS SDKs. It can use SQLite as the data store behind the scenes. Core Data managed object context is not thread-safe.
@@ -18,17 +19,22 @@ NSPersistentStore reads and writes data to whichever storage method you’ve dec
 Four NSPersistentStore Types:
 NSSQLiteStoreType(non-atomic, Default), NSXMLStoreType, NSBinaryStoreType, NSInMemoryStoreType.
 We can create our own type of persistent store by subclassing NSIncrementalStore. 
-https://developer.apple.com/library/ios/documentation/DataManagement/Con ceptual/IncrementalStorePG/Introduction/Introduction.html 
+https://developer.apple.com/library/ios/documentation/DataManagement/Conceptual/IncrementalStorePG/Introduction/Introduction.html 
 
 3. NSPersistentStoreCoordinator
 It is used for database connection. Here is where I set up the actual names and locations of what databases will be used to store the objects. NSPersistentStoreCoordinator is the bridge between the managed object model and the persistent store. 
 
 4. NSManagedObjectContext
 It’s like ’scratch pad’. We will be working with it the most. Whenever I need to get objects, insert objects, or delete objects, I will call methods on the managed object context.
+
 A context is an in-memory scratchpad for working with your managed objects. 
+
 • You do all of the work with your Core Data objects within a managed object context. 
+
 • Any changes you make won’t affect the underlying data on disk until you call save() on the context. 
+
 • An application can use more than one context—most non-trivial Core Data applications fall into this category. Since a context is an in-memory scratch pad for what’s on disk, you can actually load the same Core Data object onto two different contexts simultaneously. 
+
 •  A context is not thread safe. The same goes for a managed object—you can only interact with contexts and managed objects on the same thread in which they were created. We will talk about Multiple Managed Object Contexts later.
 
 
